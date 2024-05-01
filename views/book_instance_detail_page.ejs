@@ -1,0 +1,14 @@
+<%- include('header') -%>
+
+<div class="book-instance-page">
+    <h1>ID: <%= instance._id %></h1>
+    <p>
+        <strong>Title: </strong>
+        <a href=<%= instance.book.url %>><%= instance.book.title %></a>
+    </p>
+    <p><strong>Imprint:</strong> <%= instance.imprint %></p>
+    <p><strong>Status:</strong> <span class=<%= instance.status %>><%= instance.status %></span></p>
+    <p><strong>Due back:</strong> <%= instance.due_back %></p>
+</div>
+
+<%- include('footer') -%>

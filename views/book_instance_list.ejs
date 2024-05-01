@@ -1,0 +1,16 @@
+<%- include('header') -%>
+
+<div>
+    <h1>Book Instance List</h1>
+    <ul>
+        <% allInstances.forEach(instance => { %>
+            <li>
+                <a href=<%= instance.url %>><%= instance.book.title %>: <%= instance.imprint %></a> - 
+                <span class=<%= instance.status %>><%= instance.status %></span>
+                (<%= instance.due_back %>)
+            </li>
+        <% }) %>
+    </ul>
+</div>
+
+<%- include('footer') -%>

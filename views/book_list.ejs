@@ -1,0 +1,12 @@
+<%- include('header') -%>
+
+<div class="all-books-page">
+    <h1>Book List</h1>
+    <ul>
+        <% bookList.forEach(book => { %>
+            <li><a href=<%= book.url %>><%= book.title %></a> (<%= book.author.name %>)</li>
+        <% }) %>
+    </ul>
+</div>
+
+<%- include('footer') -%>

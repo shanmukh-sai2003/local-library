@@ -1,0 +1,27 @@
+<%- include('header') -%>
+
+<div class="book-detail-page">
+    <h1>Title: <%= bookDetails.title %></h1>
+    <p><strong>Author:</strong> <%= bookDetails.author.name %></p>
+    <p><strong>Summary:</strong> <%= bookDetails.summary %></p>
+    <p><strong>ISBN:</strong> <%= bookDetails.isbn %></p>
+    <p><strong>Genre:</strong> 
+        <% bookDetails.genre.forEach(genre => { %>
+            <%= genre.name %>, 
+        <% }) %>
+    </p>
+
+    <div class="copies">
+        <h3>Copies</h3>
+
+        <% bookInstances.forEach(instance => { %>
+            <div class="book-instance">
+                <p class=<%= instance.status %>><%= instance.status %></p>
+                <p><strong>Imprint:</strong> <%= instance.imprint %></p>
+                <p><strong>Id:</strong> <%= instance._id %></p>
+            </div>
+        <% }) %>
+    </div>
+</div>
+
+<%- include('footer') -%>
